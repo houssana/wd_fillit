@@ -6,7 +6,7 @@
 /*   By: rbullain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 11:58:30 by rbullain          #+#    #+#             */
-/*   Updated: 2017/04/29 18:30:10 by houssana         ###   ########.fr       */
+/*   Updated: 2017/04/29 18:52:47 by houssana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static void	fillit_rcs(t_board *cur, t_board *sol, t_tetrim **tetrims, int pos)
 			ft_putstr("found sol\n");
 			clone_board(sol, cur);
 			ft_putnbr(sol->square);
-	ft_putchar(' ');
+			ft_putchar(' ');
 			ft_putnbr(counter);
 			ft_putstr(" found better sol\n");
 			optimal = is_optimal(sol);
