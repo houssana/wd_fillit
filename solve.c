@@ -66,7 +66,6 @@ static int	is_valid(t_board *cur, int i, int j, t_tetrim *tetrim)
 /*
 ** description:
 */
-
 static int	is_optimal(t_board *sol)
 {
 	int		nb_tetri;
@@ -104,15 +103,10 @@ static void	fillit_rcs(t_board *cur, t_board *sol, t_tetrim **tetrims, int pos)
 	{
 		if ((cur->square = calc_square(cur)) < sol->square)
 		{
-			ft_putstr("found sol\n");
 			clone_board(sol, cur);
-			ft_putnbr(sol->square);
-			ft_putchar(' ');
-			ft_putnbr(counter);
-			ft_putstr(" found better sol\n");
 			optimal = is_optimal(sol);
-			return ;
 		}
+		return ;
 	}
 	i = -1;
 	while (++i < cur->square)
@@ -120,7 +114,6 @@ static void	fillit_rcs(t_board *cur, t_board *sol, t_tetrim **tetrims, int pos)
 		j = -1;
 		while (++j < cur->square)
 		{
-			counter++;
 			if (optimal)
 				return ;
 			if (is_valid(cur, i, j, tetrims[pos]) == 1)
@@ -146,8 +139,4 @@ void		fillit(t_board *solution, t_tetrim **tetrims)
 	current = create_board(solution->size);
 	fillit_rcs(current, solution, tetrims, 0);
 	free_board(current);
-	ft_putnbr(counter);
-	ft_putchar('\n');
-	ft_putnbr(optimal);
-	ft_putchar('\n');
 }
