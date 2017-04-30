@@ -6,7 +6,7 @@
 /*   By: rbullain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 11:58:30 by rbullain          #+#    #+#             */
-/*   Updated: 2017/04/29 18:52:47 by houssana         ###   ########.fr       */
+/*   Updated: 2017/04/30 14:01:13 by houssana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /*
 ** description:
 */
-int			optimal;
-int			counter;
+int						optimal;
+long long int			counter;
 
 static void	quit_tetrim(t_board *cur, int i, int j, t_tetrim *tetrim)
 {
@@ -116,7 +116,7 @@ static void	fillit_rcs(t_board *cur, t_board *sol, t_tetrim **tetrims, int pos)
 		{
 			if (optimal)
 				return ;
-			if (is_valid(cur, i, j, tetrims[pos]) == 1)
+			if(is_valid(cur, i, j, tetrims[pos]))
 			{
 				if (calc_square(cur) < sol->square)
 					fillit_rcs(cur, sol, tetrims, pos + 1);
