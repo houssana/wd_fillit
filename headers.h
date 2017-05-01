@@ -6,7 +6,7 @@
 /*   By: rbullain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 11:49:51 by rbullain          #+#    #+#             */
-/*   Updated: 2017/04/30 14:07:45 by houssana         ###   ########.fr       */
+/*   Updated: 2017/04/29 17:10:15 by houssana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ typedef struct	s_board
 {
 	int		size;
 	int		square;
+	int		*square_tab;
+	int		optimal;
+	t_point		*start;
 	char	**map;
-	int		*on_edge;
 }				t_board;
 
 t_board			*create_board(int size);
